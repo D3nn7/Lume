@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/alarm_item"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:clickable="true"
+    app:cardElevation="4dp"
+    android:focusable="true"
+    android:animateLayoutChanges="true"
+    app:contentPadding="15dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alarm_item_time_textview"
+            android:textSize="50sp"
+            android:text="06:00"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/alarm_item_time_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/alarm_item_control_linearlayout"
+            android:id="@+id/alarm_item_info_details_linearlayout"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/content_description_label_imageview"
+                    android:src="@drawable/ic_label_24"
+                    android:id="@+id/alarm_item_label_icon"
+                    android:visibility="gone"
+                    android:layout_marginEnd="10dp"
+                    tool:visibility="visible"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:id="@+id/alarm_item_label_textview"
+                    android:text="Label"
+                    />
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/alarm_item_weekdays_textview"
+                android:text="Mo., Di., Mi., Do., Fr., Sa., So."
+                />
+        </LinearLayout>
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alarm_item_switch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/alarm_item_info_details_linearlayout"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/alarm_item_control_linearlayout"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tool:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/alarm_item_info_details_linearlayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/alarm_item_divider"
+                android:layout_marginVertical="15dp"
+                app:dividerThickness="2dp" />
+
+            <include
+                layout="@layout/weekday_selection"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/alarm_item_weekday_selection"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingVertical="13dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_active_notification_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem Ipsum (Default)"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingVertical="13dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/alarm_item_vibrate_linearlayout_icon"
+                    android:src="@drawable/ic_vibration_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vibration"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/alarm_item_vibrate_linearlayout_icon"
+                    android:layout_marginStart="8dp"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_circle_unchecked_24"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

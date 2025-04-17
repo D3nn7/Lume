@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lume</string>
+    <string name="about">About</string>
+    <string name="content_description_about">About the app</string>
+    <string name="add_new_alarm">Add a new alarm</string>
+    <string name="content_description_label_imageview">label</string>
+    <string name="vibration">Vibration</string>
+</resources>

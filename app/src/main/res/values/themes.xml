@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Lume" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorOnPrimary">@color/on_primary_light</item>
+        <item name="colorPrimaryContainer">@color/primary_container_light</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container_light</item>
+        <item name="colorSecondary">@color/secondary_light</item>
+        <item name="colorOnSecondary">@color/on_secondary_light</item>
+        <item name="colorSecondaryContainer">@color/secondary_container_light</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container_light</item>
+        <item name="colorTertiary">@color/tertiary_light</item>
+        <item name="colorOnTertiary">@color/on_tertiary_light</item>
+        <item name="colorTertiaryContainer">@color/tertiary_container_light</item>
+        <item name="colorOnTertiaryContainer">@color/on_tertiary_container_light</item>
+        <item name="colorError">@color/error_light</item>
+        <item name="colorOnError">@color/on_error_light</item>
+        <item name="colorErrorContainer">@color/error_container_light</item>
+        <item name="colorOnErrorContainer">@color/on_error_container_light</item>
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorOnBackground">@color/on_background_light</item>
+        <item name="colorSurface">@color/surface_light</item>
+        <item name="colorOnSurface">@color/on_surface_light</item>
+        <item name="colorSurfaceVariant">@color/surface_variant_light</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant_light</item>
+        <item name="colorOutline">@color/outline_light</item>
+        <item name="colorOutlineVariant">@color/outline_variant_light</item>
+        <item name="colorSurfaceContainer">@color/surface_container_light</item>
+        <item name="colorSurfaceContainerLow">@color/surface_container_low_light</item>
+        <item name="colorSurfaceContainerLowest">@color/surface_container_lowest_light</item>
+        <item name="colorSurfaceContainerHigh">@color/surface_container_high_light</item>
+        <item name="colorSurfaceContainerHighest">@color/surface_container_highest_light</item>
+        <item name="colorSurfaceDim">@color/surface_dim_light</item>
+        <item name="colorSurfaceBright">@color/surface_bright_light</item>
+    </style>
+
+    <style name="Theme.Lume" parent="Base.Theme.Lume" />
+
+    <style name="MenuTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textColor">?attr/colorControlNormal</item>
+    </style>
+
+    <style name="ToolbarBackground" parent="">
+        <item name="android:background">@color/background_light</item>
+    </style>
+
+</resources>
