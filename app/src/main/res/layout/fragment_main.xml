@@ -34,12 +34,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/main_fragment_content_linearlayout"
             android:orientation="vertical"
             >
-
-            <include
-                android:id="@+id/alarm_item"
-                layout="@layout/alarm_item" />
 
             <include layout="@layout/add_alarm"
                 android:layout_width="match_parent"

@@ -5,4 +5,5 @@
     <string name="add_new_alarm">Add a new alarm</string>
     <string name="content_description_label_imageview">label</string>
     <string name="vibration">Vibration</string>
+    <string name="delete">Delete</string>
 </resources>

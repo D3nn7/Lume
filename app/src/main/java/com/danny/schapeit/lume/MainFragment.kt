@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.transition.TransitionManager
 import com.danny.schapeit.lume.databinding.FragmentMainBinding
-import com.google.android.material.timepicker.MaterialTimePicker
-import com.google.android.material.timepicker.TimeFormat
+import java.time.DayOfWeek
+import java.time.LocalDateTime
+import java.time.LocalTime
 
 class MainFragment: Fragment() {
 
@@ -30,26 +29,27 @@ class MainFragment: Fragment() {
     override fun onStart() {
         super.onStart()
 
-        //TODO: Only test code. remove after correct implementation
-        binding.alarmItem.root.setOnClickListener {
+        context?.let {
+            val testAlarmView = AlarmItemView(it)
 
-            showOrHideAlarmOptions()
-        }
+            testAlarmView.setData(
+                AlarmData(
+                    time = LocalTime.MIDNIGHT,
+                    label = "Call John Doe",
+                    tone = AlarmTone.LOFI_ALARM,
+                    useVibration = true,
+                    recurringDays = setOf(
+                        DayOfWeek.MONDAY,
+                        DayOfWeek.THURSDAY,
+                        DayOfWeek.SATURDAY
+                    ),
+                    isActive = true,
+                    createdAt = LocalDateTime.now()
+                ),
+                parentFragmentManager = parentFragmentManager
+            )
 
-        binding.alarmItem.alarmItemTimeTextview.setOnClickListener {
-            val picker = MaterialTimePicker.Builder()
-                .setTimeFormat(TimeFormat.CLOCK_24H)
-                .setHour(6)
-                .setMinute(0)
-                .setInputMode(MaterialTimePicker.INPUT_MODE_CLOCK)
-                .setTitleText("Select time for alarm")
-                .build()
-
-            picker.show(parentFragmentManager, "ALARM_SELECT_TIME")
-
-            if (binding.alarmItem.alarmItemControlLinearlayout.isGone) {
-                showOrHideAlarmOptions()
-            }
+            binding.mainFragmentContentLinearlayout.addView(testAlarmView)
         }
 
         binding.topAppBar.setOnMenuItemClickListener {
@@ -60,18 +60,6 @@ class MainFragment: Fragment() {
                 }
                 else -> false
             }
-        }
-    }
-
-    private fun showOrHideAlarmOptions() {
-        TransitionManager.beginDelayedTransition(binding.alarmItem.alarmItemControlLinearlayout)
-
-        if (binding.alarmItem.alarmItemControlLinearlayout.isGone) {
-            binding.alarmItem.alarmItemControlLinearlayout.visibility = View.VISIBLE
-            binding.alarmItem.alarmItemLabelIcon.visibility = View.VISIBLE
-        } else {
-            binding.alarmItem.alarmItemControlLinearlayout.visibility = View.GONE
-            binding.alarmItem.alarmItemLabelIcon.visibility = View.GONE
         }
     }
 

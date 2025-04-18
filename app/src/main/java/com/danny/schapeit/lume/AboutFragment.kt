@@ -22,6 +22,18 @@ class AboutFragment: Fragment() {
         return view
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        val sb = StringBuilder("Used Sounds")
+
+        for (alarmTone in AlarmTone.entries) {
+            sb.append("\n- ${alarmTone.displayName} by ${alarmTone.author}")
+        }
+
+        binding.aboutFragmentLicensesTextview.text = sb
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
